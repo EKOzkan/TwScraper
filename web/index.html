@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <!---<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />--->
     <title>TwScraper!</title>
+    
 
     <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
     <script type="text/javascript" src="/eel.js"></script>
-    <script type="text/javascript">
 
-        eel.expose(say_hello_js);               // Expose this function to Python
-        function say_hello_js(x) {
-            console.log("Hello from " + x);
-        }
-
-        say_hello_js("Javascript World!");
-        eel.say_hello_py("Javascript World!");  // Call a Python function
-
-    </script>
 </head>
 
 <body
@@ -142,13 +132,13 @@
                 opacity: 0;
             }
         </style>
-        <label for="w3review"></label>
-        <textarea id="w3review" name="w3review" rows="4" cols="50"
+        <label for="hashtags_id"></label>
+        <textarea id="hashtags_id" name="hashtags_id" rows="4" cols="50"
             placeholder="Type the keywords or hastags that you want tweets to include. put comma between them, and specify hastags with '#' symbol. For example: covid19, coronavirus, #covid"></textarea>
         <br><br>
-        <input type="checkbox" id="vehicle3" name="vehicle2" value="Bike2"
+        <input type="checkbox" id="profile_id" name="sent_id" value="dc"
             style="height: 11pt; width: 11pt; border-radius: 50%;">
-        <label for="vehicle3"
+        <label for="profile_id"
             style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold;">
 
             Scrap only one profile.</label><br>
@@ -157,9 +147,9 @@
             placeholder="dannydevito"><br><br>
 
         <br>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"
+        <input type="checkbox" id="date_id" name="date_id" value="dc"
             style="height: 11pt; width: 11pt; border-radius: 50%;">
-        <label for="vehicle1"
+        <label for="date_id"
             style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold;">
 
             Include start and end dates.</label><br>
@@ -168,9 +158,9 @@
         -
         <input type="date" name="dateofbirth" id="enddate">
         <br><br>
-        <input type="checkbox" id="vehicle2" name="vehicle2" value="Bike2"
+        <input type="checkbox" id="sent_id" name="sent_id" value="dc"
             style="height: 11pt; width: 11pt; border-radius: 50%;">
-        <label for="vehicle2"
+        <label for="sent_id"
             style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; font-weight: bold;">
 
             Do sentimental analysis.</label><br>
@@ -185,10 +175,10 @@
 
         function startf() {
             
-            var t1=document.getElementById("w3review").value;
-            var z2=document.getElementById("vehicle3").checked;
+            var t1=document.getElementById("hashtags_id").value;
+            var z2=document.getElementById("profile_id").checked;
             var t2='None';
-            var z3=document.getElementById("vehicle1").checked;
+            var z3=document.getElementById("date_id").checked;
             var t3='None';
             var t4='None';
             var t5='None';
@@ -199,7 +189,7 @@
                 var t3=document.getElementById("startdate").value;
                 var t4=document.getElementById("enddate").value;
             }
-            t5 = document.getElementById("vehicle2").checked;
+            t5 = document.getElementById("sent_id").checked;
             eel.start_calculating(t1, t2, t3, t4, t5);
         }
 
