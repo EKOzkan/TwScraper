@@ -102,7 +102,7 @@ if __name__ == "__main__":
     # starting thread 2
 
  
-    webview.create_window('TwScrapper', 'http://localhost:8078/hello.html', height=900, background_color='#1a1a1a')
+    webview.create_window('TwScrapper', 'http://localhost:8078/index.html', height=900, background_color='#1a1a1a')
     webview.start()
   
     # wait until thread 1 is completely executed
